@@ -212,7 +212,7 @@ server.registerTool(
       openWorldHint: true,
     },
     inputSchema: {
-      sites: z.array(z.string()).optional().describe("Competitor sites to watch, one per line: a domain (deathwishcoffee.com, linear.app) or a URL. A URL with a path is read as that page: a pricing page, a changelog page, or a product page. Up to 200 sites per run."),
+      sites: z.array(z.string()).describe("Competitor sites to watch, one per line: a domain (deathwishcoffee.com, linear.app) or a URL. A URL with a path is read as that page: a pricing page, a changelog page, or a product page. Up to 200 sites per run."),
       site_type: z.enum(["auto", "shopify", "woocommerce", "saas"]).optional().describe("auto (default) reads the public Shopify product feed or the WooCommerce Store API when the site has one, and otherwise reads the pricing and changelog pages it links to."),
       watch: z.array(z.string()).optional().describe("Any of: prices, stock, products, plans, changelog. prices covers price and compare at price per variant; stock covers in stock and out of stock; products covers new and removed products; plans covers plan names and prices on a pricing page; changelog covers new changelog entries. Empty means all five."),
       product_urls: z.array(z.string()).optional().describe("Product pages on a store that is not Shopify or WooCommerce. Each page is read for its schema.org Product price and availability."),
