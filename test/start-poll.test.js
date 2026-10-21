@@ -11,7 +11,7 @@ const repo = join(here, "..");
 
 const TOOL_NAME = "monitor_competitor_changes";
 const ACTOR_ID = "yxdgCbUQ4PYQWwRNU";
-const ARGS = {"company_domain": "example.com", "max_ads": "5"};
+const ARGS = {"sites": ["deathwishcoffee.com", "linear.app"], "state_key": "competitors-weekly", "min_price_change_pct": "5"};
 
 // Call the tool over stdio against the built server with fetch replaced by a
 // fake Apify API (test/mock-fetch.mjs). Returns the tools/call result and the
