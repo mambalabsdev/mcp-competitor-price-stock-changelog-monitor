@@ -1,0 +1,30 @@
+{
+  "name": "mcp-competitor-price-stock-changelog-monitor",
+  "displayName": "Competitor Price, Stock, and Changelog Monitor",
+  "version": "1.0.0",
+  "description": "MCP server for Competitor Price, Stock, and Changelog Monitor. Watch competitor stores and SaaS sites and get only what changed since the last run: price, sale price, and stock per variant, new and removed products, plan prices, and changelog entries. Runs on Apify. Clay-ready output.",
+  "author": {
+    "name": "Mamba Labs",
+    "email": "labs@mambamindsetgrowth.com"
+  },
+  "homepage": "https://mambabuilt.com",
+  "repository": "https://github.com/mambalabsdev/mcp-competitor-price-stock-changelog-monitor",
+  "license": "MIT",
+  "category": "productivity",
+  "tags": [
+    "price-monitoring",
+    "competitor-monitoring",
+    "shopify",
+    "woocommerce",
+    "changelog"
+  ],
+  "keywords": [
+    "mcp",
+    "model-context-protocol",
+    "price-monitoring",
+    "competitor-monitoring",
+    "shopify",
+    "woocommerce"
+  ],
+  "mcpServers": ".mcp.json"
+}

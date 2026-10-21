@@ -1,0 +1,14 @@
+{
+  "mcpServers": {
+    "mamba-competitor-price-stock-changelog-monitor": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "@mambalabsdev/mcp-competitor-price-stock-changelog-monitor"
+      ],
+      "env": {
+        "APIFY_TOKEN": "your-apify-token"
+      }
+    }
+  }
+}
