@@ -21,7 +21,7 @@ An MCP server for the Mamba Labs Competitor Price, Stock, and Changelog Monitor 
 
 - **Stores**: Shopify stores through their public product feed and WooCommerce stores through their public Store API. Changes: `price_change`, `compare_at_price_change`, `out_of_stock`, `back_in_stock`, `new_product`, `removed_product`, each with the product, variant, old and new value, and a link.
 - **SaaS sites**: the pricing page and changelog the site links to. Changes: `plan_added`, `plan_removed`, `plan_price_change`, `pricing_page_change`, and `changelog_entry`.
-- **One row per site per run**: `site_baseline` on the first check under a `state_key`, then `site_check` with `changes_found` (`no_change` when nothing moved).
+- **One row per site per run**: `site_baseline` on the first check under a `state_key`, then `site_check` with `changes_found` for a site that changed, or a free `no_change` row when nothing moved.
 
 Unreadable sites come back free with a `row_status` saying so.
 
@@ -106,11 +106,11 @@ Pay per event on Apify, billed to your Apify account. Prices in USD.
 | Event | Free plan | Bronze | Silver | Gold |
 |---|---|---|---|---|
 | `change-row`, one change on a watched site since the last run: a price, compare at price, or stock change on a variant, a new or removed product, a plan added, removed, or repriced, a price change on a pricing page, or a new changelog entry | $0.0025 | $0.002375 | $0.00225 | $0.002125 |
-| `site-check`, one site read and compared with its saved state, once per site per run | $0.003 | $0.00285 | $0.0027 | $0.00255 |
+| `site-check`, the first check of a site, or a later check that finds a change | $0.003 | $0.00285 | $0.0027 | $0.00255 |
 | `snapshot-row`, one current variant, plan, or changelog entry on the first check of a site, returned only when include_snapshot is on | $0.001 | $0.00095 | $0.0009 | $0.00085 |
 | `apify-actor-start`, per run start | $0.0005 | $0.0005 | $0.0005 | $0.0005 |
 
-Sites that cannot be read are free. A site checked with no changes costs one site check.
+A site where nothing moved returns a free `no_change` row, and sites that cannot be read are free.
 
 ## Your keys
 
